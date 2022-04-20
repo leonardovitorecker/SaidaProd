@@ -47,6 +47,7 @@ namespace ControleEstoque
             // bntNovo
             // 
             this.bntNovo.FlatAppearance.BorderSize = 0;
+            this.bntNovo.Click += new System.EventHandler(this.bntNovo_Click);
             // 
             // btnSalvar
             // 

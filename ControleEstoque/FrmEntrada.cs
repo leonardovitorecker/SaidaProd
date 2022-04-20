@@ -33,5 +33,10 @@ namespace ControleEstoque
             decimal total = decimal.Parse(textBoxQuantidade.Text) * decimal.Parse(textBoxUnitario.Text);
             textBoxTotal.Text = total.ToString();
         }
+
+        private void bntNovo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
