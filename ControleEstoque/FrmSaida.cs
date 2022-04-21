@@ -39,7 +39,7 @@ namespace ControleEstoque1
             this.dataGridViewSaida.DataSource = lista;
             this.dataGridViewSaida.Refresh();
 
-        }
+        }fdfefefwefwe
         private void dataGridViewSaida_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
