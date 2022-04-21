@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque1;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,7 +16,13 @@ namespace ControleEstoque
             db.usuario.Add(u);
             db.SaveChanges();
         }
+        public void SetPedido(DtoPedido p )
+        {
+            Context db = new Context();
 
+            db.pedido.Add(p);
+            db.SaveChanges();
+        }
         public void EditUsuario(DtoUsuario u)
         {
             Context db = new Context();
@@ -42,7 +49,7 @@ namespace ControleEstoque
             return result;
         }
 
-        public DtoProduto GetProdutoId(int id)
+        public DtoProduto GetProdutoEntradaId(int id)
         {
             Context db = new Context();
             DtoProduto e = db.produto.FirstOrDefault(p => p.id == id);
@@ -96,6 +103,15 @@ namespace ControleEstoque
 
             db.SaveChanges();
         }
+        internal void EditProduto1(DtoProduto p)
+        {
+            Context db = new Context();
+            DtoProduto e = db.produto.FirstOrDefault(pr => pr.id == p.id);
+            
+            e.quantidade = p.quantidade;
+
+            db.SaveChanges();
+        }
 
         public DtoUsuario2 GetUsuarioId(int id)
         {
@@ -112,7 +128,14 @@ namespace ControleEstoque
 
             return result;
         }
+        public void DeletarProduto(int id)
+        {
+            Context db = new Context();
+            DtoProduto p = db.produto.FirstOrDefault(prod => prod.id == id);
+            db.produto.Remove(p);
+            db.SaveChanges();
 
+        }
         public void DeletarUsuario(int id)
         {
             Context db = new Context();
@@ -120,5 +143,50 @@ namespace ControleEstoque
             db.usuario.Remove(u);
             db.SaveChanges();
         }
+
+         public DtoProduto2 GetProdutoId(int id)
+        {
+            Context db = new Context ();
+            var result1 = (from p in db.produto
+                           where p.id == id
+                           select new DtoProduto2
+                           {id = p.id,
+                          nome=p.nome}).FirstOrDefault();
+            var result2 = db.produto.Where(p => p.id == id).FirstOrDefault();
+            return result1;
+        }
+
+        public DtoPedido2 GetPedidoId(int id)
+        {
+            Context db = new Context();
+            var result1 = (from p in db.pedido
+                           where p.id == id
+                           select new DtoPedido2
+                           {
+                               id = p.id,
+                               idProduto=p.idProduto,
+                               nomeCliente = p.nomeCliente,
+                               valorPedido = p.valorPedido,
+                               quantidadePedido=p.quantidadePedido
+                           }).FirstOrDefault();
+            var result2 = db.pedido.Where(p => p.id == id).FirstOrDefault();
+            return result1;
+        }
+        public List<DtoPedido2> ListPedidos()
+        {
+            Context db = new Context();
+            List<DtoPedido2> result = (from p in db.pedido
+                                        select new DtoPedido2
+                                        {
+                                            id = p.id,
+                                            idProduto=p.idProduto,
+                                            nomeCliente = p.nomeCliente,
+                                            quantidadePedido =p.quantidadePedido,
+                                            valorPedido=p.valorPedido
+                                        }).ToList();
+
+            return new List<DtoPedido2>(result);
+        }
+
     }
 }

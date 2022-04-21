@@ -113,6 +113,7 @@ namespace ControleEstoque
             this.BtnSaidas.Text = "Saídas";
             this.BtnSaidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnSaidas.UseVisualStyleBackColor = true;
+            this.BtnSaidas.Click += new System.EventHandler(this.BtnSaidas_Click);
             // 
             // BtnEntradas
             // 

@@ -24,19 +24,19 @@ namespace ControleEstoque
         private void textBoxProduto_Leave(object sender, EventArgs e)
         {
             Model get = new Model();
-            DtoProduto produto = get.GetProdutoId(int.Parse(textBoxProduto.Text));
+            DtoProduto produto = get.GetProdutoEntradaId(int.Parse(textBoxProduto.Text));
             textBoxNomeProduto.Text = produto.nome;
         }
 
         private void textBoxUnitario_Leave(object sender, EventArgs e)
         {
+           
             decimal total = decimal.Parse(textBoxQuantidade.Text) * decimal.Parse(textBoxUnitario.Text);
             textBoxTotal.Text = total.ToString();
         }
 
-        private void bntNovo_Click(object sender, EventArgs e)
-        {
+       
 
-        }
+        
     }
 }

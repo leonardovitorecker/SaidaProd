@@ -71,10 +71,41 @@ namespace ControleEstoque
             textBoxVlVenda.Enabled = true;
             textBoxQte.Enabled = true;
         }
+     
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+     
+     
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
+          
+            LiberarCampos();
+            textBoxNome.Focus();
+           
+        }
 
+        private void btnExcluir_Click_1(object sender, EventArgs e)
+        {
+            if (textBoxID.Text != string.Empty)
+            {
+                Model del = new Model();
+                del.DeletarProduto(int.Parse(textBoxID.Text));
+                BloqueiaCampos();
+                CarregarGrid();
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int id = (Int32)dataGridView1.CurrentRow.Cells[0].Value;
+
+            Model get = new Model();
+            DtoProduto2 p = get.GetProdutoId(id);
+            textBoxID.Text = p.id.ToString();
+            textBoxNome.Text = p.nome.ToString();
+
+            LiberarCampos();
+            textBoxNome.Focus();
         }
     }
 }

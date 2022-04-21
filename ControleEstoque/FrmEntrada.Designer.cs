@@ -47,7 +47,7 @@ namespace ControleEstoque
             // bntNovo
             // 
             this.bntNovo.FlatAppearance.BorderSize = 0;
-            this.bntNovo.Click += new System.EventHandler(this.bntNovo_Click);
+           
             // 
             // btnSalvar
             // 
@@ -130,6 +130,7 @@ namespace ControleEstoque
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(100, 20);
             this.textBoxProduto.TabIndex = 9;
+          
             this.textBoxProduto.Leave += new System.EventHandler(this.textBoxProduto_Leave);
             // 
             // textBoxQuantidade

@@ -61,10 +61,12 @@ namespace ControleEstoque
             // btnExcluir
             // 
             this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnEditar
             // 
             this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // label1
             // 
@@ -154,7 +156,8 @@ namespace ControleEstoque
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(621, 150);
             this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // FrmProduto
             // 

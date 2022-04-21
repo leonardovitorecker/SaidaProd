@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,12 @@ namespace ControleEstoque
         {
             FrmEntrada f = new FrmEntrada();
             f.Show();
+        }
+
+        private void BtnSaidas_Click(object sender, EventArgs e)
+        {
+            FrmSaida s = new FrmSaida();
+            s.Show();
         }
     }
 }
