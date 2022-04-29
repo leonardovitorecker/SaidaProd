@@ -55,7 +55,7 @@ namespace ControleEstoque1
                 p.quantidadePedido = decimal.Parse(txt_QteVen.Text);
                 p.valorPedido = decimal.Parse(txt_VlrTotal.Text);
                 p.idProduto = int.Parse(txt_IdProd.Text);
-            
+                p.dtvenda= DateTime.Now;
                 set.SetPedido(p);
                 
                 CarregarGrid();
@@ -80,6 +80,7 @@ namespace ControleEstoque1
             txt_IdProd.Text = produto.id.ToString();
             txt_NomeProduto.Text = produto.nome;
             txt_VlrProd.Text = produto.valorvenda.ToString(); 
+            
 
         }
 
@@ -107,7 +108,7 @@ namespace ControleEstoque1
             Txt_Cliente.Text = p.nomeCliente.ToString();
             txt_QteVen.Text = p.quantidadePedido.ToString();
             txt_VlrTotal.Text = p.valorPedido.ToString();
-
+            p.dtvenda = DateTime.Now;
            
             Txt_Cliente.Focus();
             txt_VlrTotal.Focus();

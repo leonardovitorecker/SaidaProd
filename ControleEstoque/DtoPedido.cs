@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace ControleEstoque1
 {
@@ -13,5 +14,7 @@ namespace ControleEstoque1
         public string nomeCliente { get; set; }
         public decimal valorPedido { get; set;}
         public decimal quantidadePedido { get; set; }
+
+        public DateTime? dtvenda { get; set; }
     }
 }

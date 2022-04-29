@@ -14,5 +14,6 @@ namespace ControleEstoque1
         public string nomeCliente { get; set; }
         public decimal valorPedido { get; set; }
         public decimal quantidadePedido { get; set; }
+        public DateTime? dtvenda { get; set; }
     }
 }

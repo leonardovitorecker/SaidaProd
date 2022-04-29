@@ -9,6 +9,13 @@ namespace ControleEstoque
 {
     public class Model
     {
+        public void SetEntradaproduto(DtoEntrada u)
+        {
+            Context db = new Context();
+
+            db.entrada.Add(u);
+            db.SaveChanges();
+        }
         public void SetUsuario(DtoUsuario u)
         {
             Context db = new Context();
@@ -187,6 +194,8 @@ namespace ControleEstoque
 
             return new List<DtoPedido2>(result);
         }
+
+       
 
     }
 }

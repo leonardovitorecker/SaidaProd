@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque1;
+using System;
 using System.Collections.Generic;
 
 namespace ControleEstoque
@@ -8,6 +9,12 @@ namespace ControleEstoque
         public FrmEntrada()
         {
             InitializeComponent();
+            BloqueiaCampos();
+        }
+        private void BloqueiaCampos()
+        {
+            textBoxId.Enabled = false;
+           
         }
 
         private void bntConsulta_Click(object sender, EventArgs e)
@@ -35,8 +42,38 @@ namespace ControleEstoque
             textBoxTotal.Text = total.ToString();
         }
 
-       
+        private void bntNovo_Click(object sender, EventArgs e)
+        {
+            LiberarCampos();
+            textBoxQuantidade.Focus();
 
-        
+        }
+          private void LiberarCampos()
+        {
+            textBoxTotal.Enabled = true;
+            textBoxQuantidade.Enabled = true;
+            textBoxUnitario.Enabled = true;
+            textBoxProduto.Enabled=true;
+            textBoxNomeProduto.Enabled = true;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Model set = new Model();
+            DtoEntrada p = new DtoEntrada();
+            p.produtoid=textBoxProduto.Text;
+            p.nomeproduto=textBoxNomeProduto.Text;
+            p.valorunitario = decimal.Parse(textBoxUnitario.Text);
+            p.valortotal = decimal.Parse(textBoxTotal.Text);
+            p.quantidade = decimal.Parse(textBoxQuantidade.Text);
+            p.dtcompra = DateTime.Now;
+
+          
+            
+                set.SetEntradaproduto(p);
+            
+            BloqueiaCampos();
+            
+        }
     }
 }
