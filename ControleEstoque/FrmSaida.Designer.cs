@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_VlrTotal = new System.Windows.Forms.TextBox();
             this.dataGridViewSaida = new System.Windows.Forms.DataGridView();
-            this.btn_Salvar = new System.Windows.Forms.Button();
             this.bntConsulta = new System.Windows.Forms.Button();
             this.txt_NomeProduto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,8 +46,8 @@
             this.txt_IdPedido = new System.Windows.Forms.TextBox();
             this.txt_IdProd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_EstAtu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txt_EstAtu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaida)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +87,7 @@
             // 
             // btn_Adicionar
             // 
-            this.btn_Adicionar.Location = new System.Drawing.Point(27, 371);
+            this.btn_Adicionar.Location = new System.Drawing.Point(11, 358);
             this.btn_Adicionar.Name = "btn_Adicionar";
             this.btn_Adicionar.Size = new System.Drawing.Size(115, 23);
             this.btn_Adicionar.TabIndex = 4;
@@ -132,21 +131,11 @@
             // dataGridViewSaida
             // 
             this.dataGridViewSaida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSaida.Location = new System.Drawing.Point(565, 141);
+            this.dataGridViewSaida.Location = new System.Drawing.Point(395, 141);
             this.dataGridViewSaida.Name = "dataGridViewSaida";
-            this.dataGridViewSaida.Size = new System.Drawing.Size(235, 150);
+            this.dataGridViewSaida.Size = new System.Drawing.Size(405, 150);
             this.dataGridViewSaida.TabIndex = 13;
             this.dataGridViewSaida.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSaida_CellContentClick);
-            // 
-            // btn_Salvar
-            // 
-            this.btn_Salvar.Location = new System.Drawing.Point(581, 313);
-            this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(115, 23);
-            this.btn_Salvar.TabIndex = 14;
-            this.btn_Salvar.Text = "Salvar Pedido";
-            this.btn_Salvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_Salvar.UseVisualStyleBackColor = true;
             // 
             // bntConsulta
             // 
@@ -162,7 +151,7 @@
             // 
             this.txt_NomeProduto.Location = new System.Drawing.Point(190, 141);
             this.txt_NomeProduto.Name = "txt_NomeProduto";
-            this.txt_NomeProduto.Size = new System.Drawing.Size(230, 20);
+            this.txt_NomeProduto.Size = new System.Drawing.Size(139, 20);
             this.txt_NomeProduto.TabIndex = 16;
             // 
             // label4
@@ -183,7 +172,7 @@
             // 
             // Txt_Cliente
             // 
-            this.Txt_Cliente.Location = new System.Drawing.Point(160, 215);
+            this.Txt_Cliente.Location = new System.Drawing.Point(290, 215);
             this.Txt_Cliente.Name = "Txt_Cliente";
             this.Txt_Cliente.Size = new System.Drawing.Size(100, 20);
             this.Txt_Cliente.TabIndex = 20;
@@ -191,7 +180,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(168, 199);
+            this.label6.Location = new System.Drawing.Point(312, 199);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 22;
@@ -215,7 +204,7 @@
             // 
             // txt_IdProd
             // 
-            this.txt_IdProd.Location = new System.Drawing.Point(289, 215);
+            this.txt_IdProd.Location = new System.Drawing.Point(160, 215);
             this.txt_IdProd.Name = "txt_IdProd";
             this.txt_IdProd.Size = new System.Drawing.Size(100, 20);
             this.txt_IdProd.TabIndex = 23;
@@ -223,18 +212,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(300, 199);
+            this.label7.Location = new System.Drawing.Point(172, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 24;
             this.label7.Text = "Id Produto";
-            // 
-            // txt_EstAtu
-            // 
-            this.txt_EstAtu.Location = new System.Drawing.Point(11, 316);
-            this.txt_EstAtu.Name = "txt_EstAtu";
-            this.txt_EstAtu.Size = new System.Drawing.Size(116, 20);
-            this.txt_EstAtu.TabIndex = 25;
             // 
             // label8
             // 
@@ -244,6 +226,13 @@
             this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 26;
             this.label8.Text = "quantidade atualizada";
+            // 
+            // txt_EstAtu
+            // 
+            this.txt_EstAtu.Location = new System.Drawing.Point(11, 316);
+            this.txt_EstAtu.Name = "txt_EstAtu";
+            this.txt_EstAtu.Size = new System.Drawing.Size(116, 20);
+            this.txt_EstAtu.TabIndex = 25;
             // 
             // FrmSaida
             // 
@@ -261,7 +250,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_NomeProduto);
             this.Controls.Add(this.bntConsulta);
-            this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.dataGridViewSaida);
             this.Controls.Add(this.txt_VlrTotal);
             this.Controls.Add(this.label3);
@@ -279,7 +267,6 @@
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.txt_VlrTotal, 0);
             this.Controls.SetChildIndex(this.dataGridViewSaida, 0);
-            this.Controls.SetChildIndex(this.btn_Salvar, 0);
             this.Controls.SetChildIndex(this.bntConsulta, 0);
             this.Controls.SetChildIndex(this.txt_NomeProduto, 0);
             this.Controls.SetChildIndex(this.label4, 0);
@@ -290,9 +277,9 @@
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.txt_IdProd, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.txt_EstAtu, 0);
             this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaida)).EndInit();
             this.ResumeLayout(false);
@@ -310,7 +297,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_VlrTotal;
         private System.Windows.Forms.DataGridView dataGridViewSaida;
-        private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.Button bntConsulta;
         private System.Windows.Forms.TextBox txt_NomeProduto;
         private System.Windows.Forms.Label label4;
@@ -321,7 +307,7 @@
         private System.Windows.Forms.TextBox txt_IdPedido;
         private System.Windows.Forms.TextBox txt_IdProd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_EstAtu;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_EstAtu;
     }
 }

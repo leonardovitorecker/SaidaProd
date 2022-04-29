@@ -14,9 +14,10 @@ namespace ControleEstoque1
         public FrmSaida()
         {
             InitializeComponent();
+            BloqueiaCampos();
         }
 
-
+      
         private void bntConsulta_Click(object sender, EventArgs e)
         {
 
@@ -37,7 +38,14 @@ namespace ControleEstoque1
             this.dataGridViewSaida.DataSource = lista;
             this.dataGridViewSaida.Refresh();
         }
-
+        private void BloqueiaCampos()
+        {
+            txt_IdProd.Enabled = false;
+            txt_IdPedido.Enabled = false;
+          
+            
+           
+        }
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
            
